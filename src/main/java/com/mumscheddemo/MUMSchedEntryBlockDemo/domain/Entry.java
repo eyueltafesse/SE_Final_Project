@@ -8,7 +8,7 @@ import java.util.Set;
 @Entity
 public class Entry {
 
-	private int entryID;
+	private int id;
 
 	private String entryName;
 	private int FPPNum;
@@ -22,11 +22,11 @@ public class Entry {
 	}
 
 	public int getEntryID() {
-		return entryID;
+		return id;
 	}
 
 	public void setEntryID(int entryID) {
-		this.entryID = entryID;
+		this.id = entryID;
 	}
 
 	public int getFPPNum() {
@@ -68,5 +68,6 @@ public class Entry {
 	public void setEntryName(String entryName) {
 		this.entryName = entryName;
 	}
+
 
 }

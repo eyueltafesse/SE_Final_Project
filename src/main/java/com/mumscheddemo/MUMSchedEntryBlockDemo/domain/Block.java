@@ -1,12 +1,16 @@
 package com.mumscheddemo.MUMSchedEntryBlockDemo.domain;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.util.Date;
 
 @Entity
 public class Block {
-    private int blockID;
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
     private String blockName;
     private Date startDate;
     private Date endDate;
@@ -14,6 +18,7 @@ public class Block {
     private int MPPNum;
     private String entryName;
     private Entry entry;
+    //private String id;
 
     public Block() {
     }
@@ -23,11 +28,11 @@ public class Block {
     }
 
     public int getBlockID() {
-        return blockID;
+        return id;
     }
 
     public void setBlockID(int blockID) {
-        this.blockID = blockID;
+        this.id = blockID;
     }
 
     public Date getStartDate() {
@@ -84,7 +89,7 @@ public class Block {
 
 	@Override
 	public String toString() {
-		return "Block [blockID=" + blockID + ", blockName=" + blockName + ", startDate=" + startDate + ", endDate="
+		return "Block [blockID=" + id + ", blockName=" + blockName + ", startDate=" + startDate + ", endDate="
 				+ endDate + ", FPPNum=" + FPPNum + ", MPPNum=" + MPPNum + ", entryName=" + entryName + ", entry="
 				+ entry + "]";
 	}
