@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+       xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Block Manager</title>
+</head>
+<body>
+<div align="center">
+    <h1>Block List</h1>
+    <a href="/new">Create New Block</a>
+    <br/><br/>
+    <table border="1" cellpadding="10">
+        <thead>
+        <tr>
+
+
+            <th>Block ID</th>
+            <th>Block Name</th>
+            <th>StartDate</th>
+            <th>EndDate</th>
+            <th>FPPNum</th>
+            <th>MPPNum</th>
+            <th>Entry Name</th>
+
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="Block : ${listBlocks}">
+            <td th:text="${Block.id}">Block ID</td>
+            <td th:text="${Block.name}">Name</td>
+            <td th:text="${Block.startdate}">Block Start Date</td>
+            <td th:text="${Block.endDate}">Made in</td>
+            <td th:text="${Block.FPPNum}">FPP Track NUM</td>
+            <td th:text="${Block.MPPNum}">MPP Track Num</td>
+            <td th:text="${Block.endDate}">Made in</td>
+            <td th:text="${Block.entryName}">Block Entry Name</td>
+
+            <td>
+                <a th:href="/@{'/edit/' + ${Block.id}}">Edit</a>
+                &nbsp;&nbsp;&nbsp;
+                <a th:href="/@{'/delete/' + ${Block.id}}">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+
+
+
+</body>
+</html>
