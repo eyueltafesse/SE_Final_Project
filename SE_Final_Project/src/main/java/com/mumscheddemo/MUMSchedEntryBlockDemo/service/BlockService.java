@@ -14,8 +14,9 @@ public class BlockService {
         @Autowired
         private BlockRepository repo;
 
-        public List<Block> listAll() {
+        public  Block listAll() {
             return repo.findAll();
+            
         }
 
         public void save(Block block) {
